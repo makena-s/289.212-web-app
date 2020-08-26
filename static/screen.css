@@ -1,7 +1,4 @@
-/* WEEK 1 TUTORIAL: HTML AND CSS REFRESHER */
-
-/* google font import (must be at top of file) */
-
+/*google font import*/
 @import url('https://fonts.googleapis.com/css?family=Monda');
 @import url('https://fonts.googleapis.com/css?family=Yellowtail');
 
@@ -25,14 +22,16 @@ elements with a corresponding id attribute */
 
 #header {
     background-color: #DFE;
+/*
     background-image: url(checks.svg), url(checks.svg);
     background-position: top, bottom;
     background-repeat: repeat-x;
-    background-size: 35px;
-    border-bottom: white 10px solid;
-    margin-bottom: 40px;
-    padding-top: 50px;
-    padding-bottom: 40px;
+    background-size: 20px;
+*/
+    border: 20px solid transparent;
+    border-image: url(logo.svg) 50 round;
+
+    padding: 40px, 40px;
     text-align: center;
 }
 
@@ -41,10 +40,11 @@ elements with a corresponding id attribute */
 /* tag selectors */
 
 body {
-    background-color: #600;
-    color: #2A8;
+    background-color: #3b335c;
+    color: #ffffff;
     font-family: 'Monda', sans-serif;
     margin: 0;
+    text-align: center;
 }
 
 h1 {
@@ -65,8 +65,8 @@ a {
 }
 
 #menu {
-    background-color: white;
-    background-image: url(menu-bg.svg);
+    background-color: pink;
+/*    background-image: url(menu-bg.svg);*/
     background-size: 46px;
     border-bottom: #2A8 10px solid;
     border-top: #2A8 4px solid;

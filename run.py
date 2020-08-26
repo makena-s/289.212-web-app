@@ -3,20 +3,77 @@ import sqlite3
 
 app = Flask(__name__)
 app.secret_key = 'ojhj090e9fwiorj908sd0foijhklfdgf'
-DOGDB = 'dog.db'
+DOGDB = 'sqlite/dog.db'
 
-def fetchMenu(con):
+def fetchData(con):
     db = sqlite3.connect(DOGDB) # connect to database
-    print(db) # print in console that connnection has worked, <sqlite3.Connection object at 0x7fd7d84db300>
-    print('egg')
+    comments = []
+    cur = db.execute('SELECT * FROM comments')
+    for row in cur:
+        comments.append(list(row))
+        
+    newest = []
+    cur = db.execute('SELECT * FROM comments ORDER BY timestamp DESC LIMIT 3')
+    for row in cur:
+        newest.append(list(row))
+        
+    return {'comments':comments, 'newest':newest} # python dictionary, made up of 'key names' and 'values'
 
 @app.route('/')
-def index():
-    con = sqlite3.connect('dog.db')
-    cur = con.execute('SELECT * FROM comments')
-    
-#    for row in cur:
-#        comments.append(list(row))
-        
+def index():    
+    con = sqlite3.connect(DOGDB)
+    data = fetchData(con)
     con.close()
-    return('<h1>dog blog</h1>')
+    
+    print('hello world ;^)')
+    print(sqlite3.connect(DOGDB)) # print in command prompt that connnection has worked
+    
+    return render_template('index.html',
+                           disclaimer='disclaimer, babey!',
+                           comments=data['comments'],
+                           
+                           newest=data['newest'
+                           ]
+                          )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

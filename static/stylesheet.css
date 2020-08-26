@@ -1,0 +1,179 @@
+/*google font import*/
+@import url('https://fonts.googleapis.com/css?family=Monda');
+@import url('https://fonts.googleapis.com/css?family=Yellowtail');
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+
+/* ccs rule if you want to visualise the boxes */
+
+/*
+* {
+    outline: 1px rgba(255,0,0,0.1) solid;
+}
+*/
+
+body {
+    margin: 0% 15%;
+    background-color: #1f1e21;
+    color: white;
+    font-family: 'Cutive Mono', monospace;
+    text-align: center;
+    font-size: 14px;
+    word-break: break-all;
+}
+
+h1 {
+    color: gold;
+    font-family: 'Cutive Mono', monospace;
+    font-size: 35px;
+    margin: 10px;
+}
+
+h2 {
+    color: beige;
+    font-family: 'Cutive Mono', monospace;
+    font-size: 20px;
+    margin: 0px;
+}
+
+a {
+    color: #DA0;
+    text-decoration: none;
+}
+
+/* classes */
+
+.header { 
+    display: inline-block;
+    border: 5px dotted beige;
+    text-align: center;
+    padding: 20px 50px; /* inside element */
+    margin: 20px 0px; /* around element */
+}
+
+.commentsection {
+    display: block;
+    background-color: yellow;
+    padding: 0px;
+    margin: 20px 0px;
+}
+
+.commentblock {
+    display: block;
+    background-color: saddlebrown;
+    padding: 5px;
+    margin: 5px;
+}
+
+.timestamp {
+    text-align: left;
+    margin: 0;
+    color: white;
+    opacity: 0.5;
+}
+
+.commenttext {
+    text-align: center;
+    margin: 0% 5%;
+    color: white;
+    font-size: 16px;
+}
+
+.signature {
+    text-align: right;
+    margin: 0;
+    color: white;
+}
+
+/* media query: MOBILE */
+
+#menu div {
+    grid-column: span 3;
+    margin: 0 1em;
+}
+
+#menu div:nth-child(3) {
+    border-bottom: 3px solid #2A8;
+    border-top: 3px solid #2A8;
+}
+
+/* media query: SCREENS OVER 720 PX WIDE*/
+
+@media only screen and (min-width: 720px) {
+    #menu div {
+        grid-column: auto;
+        margin: 0;
+    }
+    #menu div:nth-child(3) {
+        border: none;
+        border-left: 3px solid #2A8;
+        border-right: 3px solid #2A8;
+    }
+}
+
+/* forms */
+
+input, textarea {
+  border: solid 2px #5DB;
+  border-radius: 3px;
+  color: #2A8;
+  font-family: 'Monda', sans-serif;
+  font-size: 0.8em;
+  height: 2em;
+  padding: 0 0.5em;
+}
+
+textarea {
+  height: auto;
+  width: 100%;
+}
+
+#menu input, #menu textarea {
+  float: left;
+  margin-right: 1em;
+  margin-top: -0.15em;
+  width: 2.2em;
+}
+
+#order-details {
+  margin: auto;
+  max-width: 500px;
+  padding: 2em 2.5em;
+}
+
+#order-details input,
+#order-details textarea {
+  box-sizing: border-box;
+  min-height: 3em;
+  width: 100%;
+}
+
+/* Chrome, Safari, Edge, Opera, remove box increment arrows */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* footer */
+
+#footer {
+    color: white;
+    font-size: 0.8em;
+    opacity: 0.4;
+    padding: 1em;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
