@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<!-- WEEK 1 TUTORIAL: HTML AND CSS REFRESHER -->
+
+<html>
+    
+    <head>
+
+        <meta charset="utf-8">
+        <title>212 Burgers</title>
+        <meta name="description" content="Order - 24 hour food delivery. Order
+        burgers, drinks, fries, and more!" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-tofit=no">
+        <link rel="stylesheet" href="{{ url_for('static', filename='screen.css') }}" />
+
+    </head>
+    
+    <body>
+
+        <style>
+        
+        </style>
+        
+    {% extends "base.html" %}
+        
+    {% block title %}Order - 212 Burgers{% endblock %}
+        
+    {% block head %}
+        {{ super() }}
+        <style>
+            body {
+                background-color: #DFE;
+            }
+        </style>
+    {% endblock %}
+        
+    {% block content %}
+        <div id="header">
+        <h1>Order now</h1>
+        <p>PLACE YOUR ORDER</p>
+        </div>
+        
+        <form action ="/confirm" method="post">
+        
+            <div id="menu">
+            <h1>Menu</h1>
+
+                <div>
+                    <h2>Burgers</h2>
+                    <ol class="menu-items">
+                        <!-- for loop version in html format -->
+                        {% for burger in burgers %} 
+                            <li>
+                                <input type="number" min="0" name="{{ burger[0] }}" autocomplete="off"/> <!-- form settings -->
+                                {{ burger[0] }}<span class="price">{{ burger[1] }}</span>
+                            </li>
+                        {% endfor %}
+
+                    </ol>
+                </div>
+                <div>
+                    <h2>Drinks</h2>
+                    <ul class="menu-items">
+                        <!-- for loop version in html format -->
+                        {% for drink in drinks %}
+                            <li>
+                                <input type="number" min="0" name="{{ drink [0] }}" autocomplete="off"/> <!-- form settings -->
+                                {{ drink [0] }}<span class="price">{{ drink [1] }}</span>
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+
+                <div>
+                    <h2>Sides</h2>
+                    <ul class="menu-items">
+                        <!-- for loop version in html format -->
+                        {% for side in sides %}
+                            <li>
+                                <input type="number" min="0" name="{{ side [0] }}" autocomplete="off"/> <!-- form settings -->
+                                {{ side [0] }}<span class="price">{{ side [1] }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- text area: write in a box with multiple lines -->
+            <div id="order-details">
+                <p>
+                    <label for="name">Name:</label>
+                    <input type="text"id="name"name="name"required />
+                </p>
+                <p>
+                    <label for="address">Address and delivery instructions:</label>
+                    <textarea id="address"name="address"rows="6"required></textarea>
+                </p>
+                <input type="submit"value="order"class="btn-yellow" />
+            </div>
+
+        </form>
+        
+    {% endblock %}
+
+    </body>
+    
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<!-- WEEK 1 TUTORIAL: HTML AND CSS REFRESHER -->
+
+<html>
+    
+    <head>
+
+        <meta charset="utf-8">
+        <title>212 Burgers</title>
+        <meta name="description" content="Order - 24 hour food delivery. Order
+        burgers, drinks, fries, and more!" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-tofit=no">
+        <link rel="stylesheet" href="{{ url_for('static', filename='screen.css') }}" />
+
+    </head>
+    
+    <body>
+
+        <div id="header">
+        <h1>Confirm</h1>
+        <p>ORDER CONFIRMATION</p>
+        </div>
+        
+        <div class="center-text">
+            
+            <div>
+                <h3>Details</h3>
+                {% for key in details %} <!-- for loop through a dictionary, getting the keys not the values -->
+                    <p><strong>{{ key }}:</strong> {{ details[key] }}</p>
+                {% endfor %}
+            </div>
+            
+            <div>
+                <h3>Items</h3>
+                {% for item in items %}
+                    {{ items[item] }} &times; {{item}} <br/> <!-- &times; is the multiply symbol -->
+                {% endfor %}
+            </div>
+            
+            <p>
+                <em>
+                    Our delivery person is already standing behind you.
+                    <br>
+                    Thanks for ordering from 212 Burgers!
+                </em>
+            </p>
+            
+            <p>
+                <a class="btn-yellow" href="/">home page</a> <!-- / means to to the root of the site -->
+            </p>
+        </div>
+
+    </body>
+    
+</html>

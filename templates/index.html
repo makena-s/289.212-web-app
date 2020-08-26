@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<!-- WEEK 1 TUTORIAL: HTML AND CSS REFRESHER -->
+<!--  -->
+
+<html>
+    
+<head>
+
+    <meta charset="utf-8">
+    <title>212 Burgers</title>
+    <meta name="description" content="24 hour food delivery. Order burgers,
+    drinks, fries, and more!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-tofit=no"> <!-- vital for media query resizing on mobile devices -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='screen.css') }}" />
+
+
+</head>
+    
+<body>
+    
+    <div id="header"> <!-- divs and h1 are block elements (own line) -->
+        <img src="{{ url_for('static', filename='logo.svg') }}" id="logo"/>
+        <h1>Welcome!</h1>
+        <em>BURGERS &bull; DRINKS &bull; FRIES</em> <!-- em is italic -->
+        <p>
+        <a class="btn-yellow" href="{{ url_for('order') }}">order now</a>
+        </p>
+    </div>
+    
+    <div id="menu">
+        <h1>Menu</h1>
+        
+        <div>
+            <h2>Burgers</h2>
+            <ol class="menu-items">
+                <!-- for loop version in html format -->
+                {% for burger in burgers %} 
+                    <li>{{ burger[0] }}<span class="price">{{ burger[1] }}</span></li>
+                {% endfor %}
+            </ol>
+        </div>
+        <div>
+            <h2>Drinks</h2>
+            <ul class="menu-items">
+                <!-- for loop version in html format -->
+                {% for drink in drinks %} 
+                    <li>{{ drink [0] }}<span class="price">{{ drink [1] }}</span></li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div>
+            <h2>Sides</h2>
+            <ul class="menu-items">
+                <!-- for loop version in html format -->
+                {% for side in sides %} 
+                    <li>{{ side [0] }}<span class="price">{{ side [1] }}</span></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
+    <div id="footer">
+        {{ disclaimer|upper }} 
+        <!-- works with run.py disclaimer, does not show up on page source bc it's done on the server side?? upper turns it uppercase -->
+    </div>
+
+</body>
+    
+</html>

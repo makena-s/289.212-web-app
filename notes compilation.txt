@@ -1,0 +1,99 @@
+NOTES COMPILATION
+
+#########################
+
+FLASK QUICK SETUP TO GET SITE RUNNING
+
+(project directory)
+env\Scripts\activate.bat
+set FLASK_APP=run.py
+set FLASK_DEBUG=1
+py -m flask run
+(http://localhost:5000/)
+
+#########################
+
+CONNECT TO DATABASE
+
+(project directory)
+(add sqlite folder with its 3 files)
+enter project sqlite folder
+sqlite3 databasename.db
+(above command opens or creates new)
+
+#########################
+
+DATABASE OPERATIONS
+
+CREATE TABLE comments (
+id INTEGER PRIMARY KEY,
+timestamp TEXT DATETIME DEFAULT CURRENT_TIMESTAMP,
+username,
+commenttext
+);
+
+(for timestamp, 'text' is necessary to enable sorting)
+
+INSERT INTO comments(username, commenttext) VALUES ('coolkid360', 'this is a comment!');
+
+SELECT * FROM comments;
+
+SELECT * from comments WHERE timestamp > '2020-08-24 22:42:59';
+
+format data to make it look nicer
+.headers on
+.mode column
+.width auto
+
+.tables to list tables
+
+#########################
+
+DATABASE OTHER OPERATIONS
+
+SELECT commenttext from comments;
+
+UPDATE drinks SET price = 2.99 WHERE drink = 'Cola';
+UPDATE drinks SET price = 1.99; (affects all)
+
+SELECT burger, price/2 FROM burgers; (divides prices by 2)
+python etc. mathematical operators such as */+- work in sql
+
+SELECT * FROM burgers WHERE price = 4.99 OR price = 6.99;
+logical operators
+
+SELECT * FROM burgers WHERE burger = 'Double Burger';
+
+SELECT DISTINCT price FROM drinks; (shows unique values, no duplicates)
+SELECT * FROM burgers LIMIT 2
+SELECT * FROM burgers LIMIT 2 OFFSET 1;
+SELECT * FROM burgers ORDER BY burger ASC; (ascending, also DESC for descending)
+
+ALTER TABLE drinks RENAME TO funkydrinks;
+DROP TABLE funkkydrinks;
+
+if console gets stuck, use ctrl+c to exit then redo sqlite3 databasename.db
+
+#########################
+
+SUBMISSION NOTES
+
+if you didnt do the concepts etc. you dont need to add
+make repo public or invite tabreturn 
+
+leave logins until last, just focus on getting the pages and 'anonymous' login-less commenting first 
+
+comments: best to put everything in one table 
+if there are logins then you can make separate tables i guess?
+
+commentid, timestamp, username, commenttext
+commentnumber for db purposes
+
+
+
+
+
+
+
+
+
