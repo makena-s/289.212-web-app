@@ -16,8 +16,12 @@ def fetchData(con):
     cur = db.execute('SELECT * FROM comments ORDER BY timestamp DESC LIMIT 3')
     for row in cur:
         newest.append(list(row))
+    justsent = []
+    cur = db.execute('SELECT * FROM comments ORDER BY timestamp DESC LIMIT 1')
+    for row in cur:
+        justsent.append(list(row))
         
-    return {'comments':comments, 'newest':newest} # python dictionary, made up of 'key names' and 'values'
+    return {'comments':comments, 'newest':newest, 'justsent':justsent} # python dictionary, made up of 'key names' and 'values'
 
 @app.route('/')
 def index():    
@@ -28,7 +32,7 @@ def index():
     print('hello world ;^)')
     print(sqlite3.connect(DOGDB)) # print in command prompt that connnection has worked
     return render_template('index.html',
-                           disclaimer='disclaimer, babey!',
+                           disclaimer='open your mind to dog.',
                            newest=data['newest']
                           )
 
@@ -38,45 +42,47 @@ def archive():
     data = fetchData(con)
     con.close()
     return render_template('archive.html',
-                           disclaimer='appraise dog.',
+                           disclaimer='your predecessors.',
                            comments=data['comments'],
                            newest=data['newest']
+                          )
+
+@app.route('/appraisal')
+def appraisal():
+    con = sqlite3.connect(DOGDB)
+    data = fetchData(con)
+    con.close()
+    return render_template('appraisal.html',
+                           disclaimer='divulge your truth.',
+                           comments=data['comments'],
+                           newest=data['newest']
+                          )
+
+@app.route('/confirm', methods=['POST'])
+def confirm():
+    details = {}
+    con = sqlite3.connect(DOGDB)
+    data = fetchData(con)
+
+    for input in request.form:
+        if input == 'commenttext' or input == 'username':
+            details[input] = request.form[input]
+       
+    con = sqlite3.connect(DOGDB)
+    cur = con.execute( 'INSERT INTO comments(username, commenttext) VALUES(?,?)', (details['username'], details['commenttext']))
+    con.commit()
+    con.close()
+
+    return render_template('confirm.html',
+                           details=details,
+                           disclaimer='you have encountered dog.',
+                           justsent=data['justsent']
                           )
 
 
 @app.errorhandler(404) # custom 404 page
 def page_not_found(e):
-    return render_template('404.html', disclaimer='good gravy!'), 404
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return render_template('404.html', disclaimer='good gravy.'), 404
 
 
 

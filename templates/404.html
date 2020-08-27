@@ -8,12 +8,14 @@
 
 {% block content %}
 
-    <div id="header">
-        <h1>404 error.</h1>
-        <h2>lost but never alone.</h2>
-        <p>
-            <a class="btn-yellow" href="{{ url_for('index') }}">return.</a>
-        </p>
-    </div>
+<div class="header">
+    <h1>404 error.</h1>
+</div>
+
+<h2>lost but never alone.</h2>
+
+<br><br>
+
+<a class="button" href="{{ url_for('index') }}">return.</a>
 
 {% endblock %}

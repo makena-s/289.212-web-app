@@ -19,8 +19,6 @@
         <h1>appraisal archive.</h1>
     </div>
 
-    <h2>sort by.</h2>
-
     <div class="commentsection">
     {% for comments in comments %} 
         <div class="commentblock">
@@ -31,7 +29,7 @@
     {% endfor %}
     </div>
     
-    <a class="btn-yellow" href="{{ url_for('index') }}">return.</a>
+    <a class="button" href="{{ url_for('index') }}">return.</a>
     
     <div id="footer">
         {{ disclaimer }}

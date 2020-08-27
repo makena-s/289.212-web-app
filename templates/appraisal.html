@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}appraisal.{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<body>
+
+<br><br>
+
+<h2>look below.</h2>
+
+<img class="dogimage" src="{{ url_for('static', filename='logo.svg') }}"/>
+
+<h1>how does this dog make you feel?</h1>
+
+<br><br>
+    
+<form action="/confirm" method="post">
+
+    <div id="submission">
+
+        <label for="commenttext" style="font-size: 15px;">response.</label>
+        <textarea id="commenttext" name="commenttext" rows="6" required></textarea>
+
+        <label for="username" style="font-size: 15px;">pseudonuym.</label>
+        <input type="text" id="username" name="username" required />
+
+        <input type="submit" value="submit." class="button" style="margin:10px 0px;"/>
+
+    </div>
+
+</form>
+    
+</body>
+
+{% endblock %}
