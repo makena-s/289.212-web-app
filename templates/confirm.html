@@ -23,12 +23,16 @@
         
         <div class="commentsection">
                 <div class="commentblock">
-                    <p class="timestamp">{{ details['timestamp'] }}</p>
                     <p class="commenttext">{{ details['commenttext'] }}</p>
-                    <p class="signature">-- {{ details['username'] }}</p> 
+                    <br>
+                    <p class="commenttext">-- {{ details['username'] }}</p> 
                 </div>
         </div>
 <!--        resends when refreshed?-->
+        
+        <div class="centered">
+            <img class="gif" src="{{ url_for('static', filename='dogwalk.gif') }}"/>
+        </div>
         
         <a class="button" href="/">return.</a>
      

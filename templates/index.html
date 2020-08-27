@@ -34,17 +34,21 @@
     {% endfor %}
     </div>
     
+    <div class="centered">
+        <img class="gif" src="{{ url_for('static', filename='doggif.gif') }}"/>
+    </div>
+    
     <a class="bigbutton" href="{{ url_for('appraisal') }}">proceed to dog.</a>
     
     <div class="navbar">
-        <a href="{{ url_for('index') }}">
-            <img class="icon" src="{{ url_for('static', filename='logo.svg') }}"/>index.
+        <a href="{{ url_for('appraisal') }}">
+            <img class="icon" src="{{ url_for('static', filename='star.png') }}"/><br>proceed to dog.
         </a>
         <a href="{{ url_for('archive') }}">
-            <img class="icon" src="{{ url_for('static', filename='logo.svg') }}"/>archive.
+            <img class="icon" src="{{ url_for('static', filename='star.png') }}"/><br>appraisal archive.
         </a>
-        <a href="{{ url_for('archive') }}">
-            <img class="icon" src="{{ url_for('static', filename='logo.svg') }}"/>404...
+        <a href="{{ url_for('about') }}">
+            <img class="icon" src="{{ url_for('static', filename='star.png') }}"/><br>about.
         </a>
     </div>
     

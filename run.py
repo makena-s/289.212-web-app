@@ -79,6 +79,11 @@ def confirm():
                            justsent=data['justsent']
                           )
 
+@app.route('/about')
+def about():
+    return render_template('about.html',
+                           disclaimer='seeking knowledge.',
+                          )
 
 @app.errorhandler(404) # custom 404 page
 def page_not_found(e):

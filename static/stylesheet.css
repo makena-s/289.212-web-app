@@ -120,8 +120,8 @@ a {
 }
 
 .icon {
-    max-height: 40px;
-    max-width: 40px;
+    max-height: 20px;
+    max-width: 20px;
 }
 
 .dogimage {
@@ -132,6 +132,18 @@ a {
     margin: 20px 0px; /* around element */
     max-height: 70%;
     max-width: 70%;
+}
+
+.gif {
+    display: inline;
+    text-align: center;
+    margin: 10px 0px; /* around element */
+    max-height: 20%;
+    max-width: 20%;
+}
+
+.centered {
+    text-align: center;
 }
 
 /*navbar stuff*/
