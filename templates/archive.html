@@ -5,7 +5,7 @@
 <head>
 
     <meta charset="utf-8">
-    <title>appraisal.of.dog</title>
+    <title>appraisal.archive</title>
     <meta name="description" content="24 hour food delivery. Order burgers,
     drinks, fries, and more!" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-tofit=no"> <!-- vital for media query resizing on mobile devices -->
@@ -16,23 +16,22 @@
 <body>
     
     <div class="header">
-        <h2>welcome to.</h2>
-        <h1>appraisal of dog.</h1>
+        <h1>appraisal archive.</h1>
     </div>
 
-    <h2>latest comments.</h2>
+    <h2>sort by.</h2>
 
     <div class="commentsection">
-    {% for newest in newest %} 
+    {% for comments in comments %} 
         <div class="commentblock">
-            <p class="timestamp">{{ newest[1] }}</p>
-            <p class="commenttext">{{ newest[3] }}</p>
-            <p class="signature">-- {{ newest[2] }}</p>
+            <p class="timestamp">{{ comments[1] }}</p>
+            <p class="commenttext">{{ comments[3] }}</p>
+            <p class="signature">-- {{ comments[2] }}</p>
         </div>
     {% endfor %}
     </div>
     
-    <a class="btn-yellow" href="{{ url_for('archive') }}">appraisal archive.</a>
+    <a class="btn-yellow" href="{{ url_for('index') }}">return.</a>
     
     <div id="footer">
         {{ disclaimer }}

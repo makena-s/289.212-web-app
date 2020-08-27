@@ -6,9 +6,9 @@
     {% block head %}
     <meta charset="utf-8">
     <title>{% block title %}{% endblock %}</title>
-    <meta name="description" content="24 hour food delivery. Order burgers, drinks, fries, and more!" />
+    <meta name="description" content="24 hour food delivery. Order burgers, drinks, fries, and more!"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{{ url_for('static', filename='screen.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}" />
     {% endblock %}
   </head>
 
@@ -18,7 +18,7 @@
 
     {% block footer %}
     <div id="footer">
-      {{ disclaimer|upper }}
+      {{ disclaimer }}
     </div>
     {% endblock %}
 

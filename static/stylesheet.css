@@ -52,16 +52,16 @@ a {
 
 .commentsection {
     display: block;
-    background-color: yellow;
+    background-color: transparent;
     padding: 0px;
     margin: 20px 0px;
 }
 
 .commentblock {
     display: block;
-    background-color: saddlebrown;
+    background-color: darkslategray;
     padding: 5px;
-    margin: 5px;
+    margin: 5px 0px;
 }
 
 .timestamp {
