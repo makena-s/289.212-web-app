@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Monda');
 @import url('https://fonts.googleapis.com/css?family=Yellowtail');
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@500&display=swap');
 
 /* ccs rule if you want to visualise the boxes */
 
@@ -23,16 +24,18 @@ body {
 
 h1 {
     color: gold;
-    font-family: 'Cutive Mono', monospace;
+    font-family: 'Hepta Slab', serif;
     font-size: 35px;
     margin: 10px;
+    font-weight: normal;
 }
 
 h2 {
-    color: beige;
-    font-family: 'Cutive Mono', monospace;
+    color: white;
+    font-family: 'Hepta Slab', serif;
     font-size: 20px;
     margin: 0px;
+    font-weight: normal;
 }
 
 a {
@@ -44,10 +47,32 @@ a {
 
 .header { 
     display: inline-block;
-    border: 5px dotted beige;
+    border: 5px dotted white;
     text-align: center;
     padding: 20px 50px; /* inside element */
     margin: 20px 0px; /* around element */
+}
+
+.button{
+    display: inline-block;
+    border: 2px solid white;
+    text-align: center;
+    background-color: transparent;
+    color: gold;
+    font-family: 'Hepta Slab', serif;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+.bigbutton{
+    display: inline-block;
+    border: 5px dotted white;
+    text-align: center;
+    background-color: transparent;
+    color: gold;
+    font-family: 'Hepta Slab', serif;
+    font-size: 20px;
+    padding: 20px 40px;
 }
 
 .commentsection {
@@ -59,7 +84,7 @@ a {
 
 .commentblock {
     display: block;
-    background-color: darkslategray;
+    background-color: transparent;
     padding: 5px;
     margin: 5px 0px;
 }
@@ -82,6 +107,47 @@ a {
     text-align: right;
     margin: 0;
     color: white;
+}
+
+.icon {
+    max-height: 40px;
+    max-width: 40px;
+}
+
+/*navbar stuff*/
+
+.navbar {
+    width: 100%;
+    background-color: transparent;
+    font-size: 15px;
+    word-break: normal;
+    padding: 0px;
+    margin: 40px 0px 0px;
+    text-align: center;
+    font-family: 'Hepta Slab', serif;
+}
+
+.navbar a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    word-break: normal;
+    padding: 5px 30px;
+    height: 100%;
+    background-color: transparent;
+}
+
+.navbar a:hover {
+    opacity: 0.5;
+    transition: .5s;
+}
+
+/* switch to rows when narrow */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
 }
 
 /* media query: MOBILE */
@@ -161,8 +227,8 @@ input::-webkit-inner-spin-button {
 
 #footer {
     color: white;
-    font-size: 0.8em;
-    opacity: 0.4;
+    font-size: inherit;
+    opacity: 0.5;
     padding: 1em;
     text-align: center;
 }

@@ -14,11 +14,13 @@
 </head>
     
 <body>
-    
+
+    <a href="{{ url_for('index') }}">
     <div class="header">
         <h2>welcome to.</h2>
         <h1>appraisal of dog.</h1>
     </div>
+    </a>
 
     <h2>latest comments.</h2>
 
@@ -32,11 +34,24 @@
     {% endfor %}
     </div>
     
-    <a class="btn-yellow" href="{{ url_for('archive') }}">appraisal archive.</a>
+    <a class="bigbutton" href="{{ url_for('archive') }}">proceed to dog.</a>
+    
+    <div class="navbar">
+        <a href="{{ url_for('index') }}">
+            <img class="icon" src="{{ url_for('static', filename='logo.svg') }}"/>index.
+        </a>
+        <a href="{{ url_for('archive') }}">
+            <img class="icon" src="{{ url_for('static', filename='logo.svg') }}"/>archive.
+        </a>
+        <a href="{{ url_for('archive') }}">
+            <img class="icon" src="{{ url_for('static', filename='logo.svg') }}"/>404...
+        </a>
+    </div>
     
     <div id="footer">
         {{ disclaimer }}
     </div>
+        
 
 </body>
     
