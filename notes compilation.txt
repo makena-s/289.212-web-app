@@ -40,6 +40,8 @@ SELECT * FROM comments;
 
 SELECT * from comments WHERE timestamp > '2020-08-24 22:42:59';
 
+DELETE from comments WHERE id > 10;
+
 format data to make it look nicer
 .headers on
 .mode column
